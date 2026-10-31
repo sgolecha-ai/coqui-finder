@@ -11,10 +11,10 @@ FS = 16_000            # Hz. ReSpeaker USB Mic Array v2.0 (XVF3000) 6-channel fi
 C_SOUND = 343.0        # m/s, speed of sound at ~20 C.
 
 # --- XVF3000 (ReSpeaker USB Mic Array v2.0) microphone geometry -----------------
-# ASSUMED: the 4 mics sit on a circle of radius 32 mm, 90 degrees apart (adjacent mics
-# ~45 mm apart), as in the ODAS configuration for this board. Measure your own board
-# with a ruler (centre of one mic hole to the next) and update these numbers.
-# The order only has to go round the circle: clap_test.py fixes rotation and direction.
+# MEASURED (2026-10-31, ruler): the 4 mic holes form a square with ~45 mm sides, so each mic
+# is 45 / sqrt(2) = ~32 mm from the centre, 90 degrees apart (as in the ODAS configuration
+# for this board). The order only has to go round the square: clap_test.py fixes rotation and
+# direction, so it doesn't matter whether the square sits "flat" or as a diamond here.
 MIC_POS = np.array([
     [-0.032, 0.0, 0.0],
     [0.0, -0.032, 0.0],
@@ -40,7 +40,8 @@ MIC_SELF_NOISE_SPL = 30.0
 BACKGROUND_SPL = {"quiet": 40.0, "typical": 50.0, "loud": 60.0}
 
 # --- Raw-channel quantisation (XVF3000 raw mics) -------------------------------
-# ASSUMED: 16-bit samples, digital full scale ~120 dB SPL (typical MEMS acoustic overload).
+# ASSUMED: 16-bit samples, digital full scale ~120 dB SPL (typical MEMS acoustic overload),
+# until device/loudness_cal.py measures it with a sound level meter (it rewrites the line below).
 QUANT_BITS = 16
 FULL_SCALE_SPL = 120.0
 
