@@ -45,3 +45,4 @@ Recordings go to `xvf3000/recordings/`, and the clap-test calibration to
    different mics it says whether they go round in order. (`--demo` shows pretend taps.)
    (Channel 1 also jumps when you tap: it's the board's processed mix of all 4 mics. Ignore it.)
 3. **Calibration (clap test + loudness test):** follow [CALIBRATION.md](CALIBRATION.md).
+4. **Find the pretend frogs:** follow [FROG_TEST.md](FROG_TEST.md) (phones play `frogs/frog_A.wav` etc.).

@@ -187,5 +187,4 @@ distance by about 25%.
 - Ask Claude to **commit** the two files that changed: `xvf3000/device/device_config.json`
   (angles) and `xvf3000/coqui_sim/config.py` (loudness).
 - Keep the **board in the same position** (use the sticker) for the frog experiments.
-- Next: play coqui calls from phones around the circle and run
-  `.venv/bin/python xvf3000/device/listen.py --seconds 30`.
+- Next: find the pretend frogs with [FROG_TEST.md](FROG_TEST.md).
