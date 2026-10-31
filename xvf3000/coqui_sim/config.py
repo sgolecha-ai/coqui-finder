@@ -40,7 +40,8 @@ MIC_SELF_NOISE_SPL = 30.0
 BACKGROUND_SPL = {"quiet": 40.0, "typical": 50.0, "loud": 60.0}
 
 # --- Raw-channel quantisation (XVF3000 raw mics) -------------------------------
-# ASSUMED: 16-bit samples, digital full scale ~120 dB SPL (typical MEMS acoustic overload).
+# ASSUMED: 16-bit samples, digital full scale ~120 dB SPL (typical MEMS acoustic overload),
+# until device/loudness_cal.py measures it with a sound level meter (it rewrites the line below).
 QUANT_BITS = 16
 FULL_SCALE_SPL = 120.0
 

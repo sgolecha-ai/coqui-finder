@@ -27,6 +27,7 @@ The test recordings in `samples/` were made again with the XVF3000 mic positions
 .venv/bin/python xvf3000/device/tap_view.py                      # tap picture: which mic is loudest (your own Terminal)
 .venv/bin/python xvf3000/device/tap_test.py                      # the same check as text, one hole at a time
 .venv/bin/python xvf3000/device/clap_test.py                     # angle calibration (your own Terminal)
+.venv/bin/python xvf3000/device/loudness_cal.py                  # loudness calibration (your own Terminal)
 .venv/bin/python xvf3000/device/listen.py --seconds 30           # record + find frogs
 .venv/bin/python xvf3000/device/listen.py --wav xvf3000/samples/04_two_frogs_30deg.wav
 ```
@@ -43,3 +44,4 @@ Recordings go to `xvf3000/recordings/`, and the clap-test calibration to
    with every mic's level written next to it. Tap the holes going round the board; after 4
    different mics it says whether they go round in order. (`--demo` shows pretend taps.)
    (Channel 1 also jumps when you tap: it's the board's processed mix of all 4 mics. Ignore it.)
+3. **Calibration (clap test + loudness test):** follow [CALIBRATION.md](CALIBRATION.md).
