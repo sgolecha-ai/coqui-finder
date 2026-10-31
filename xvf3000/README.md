@@ -24,6 +24,7 @@ The test recordings in `samples/` were made again with the XVF3000 mic positions
 ```bash
 .venv/bin/python xvf3000/tests/test_pipeline.py                  # run after every change
 .venv/bin/python xvf3000/device/mic_check.py                     # live levels (your own Terminal)
+.venv/bin/python xvf3000/device/tap_test.py                      # which channel is which mic (your own Terminal)
 .venv/bin/python xvf3000/device/clap_test.py                     # angle calibration (your own Terminal)
 .venv/bin/python xvf3000/device/listen.py --seconds 30           # record + find frogs
 .venv/bin/python xvf3000/device/listen.py --wav xvf3000/samples/04_two_frogs_30deg.wav
@@ -34,7 +35,9 @@ Recordings go to `xvf3000/recordings/`, and the clap-test calibration to
 
 ## First things to check with the board
 
-1. **Mic positions:** measure the distance between neighbouring mic holes. ~45 mm means the
-   32 mm circle in `coqui_sim/config.py` is right.
-2. **Which channel is which mic:** run `mic_check.py` and tap next to each mic in turn. Channels
-   2-5 should jump one at a time, going round the board in order.
+1. **Mic positions:** measured: the 4 mic holes form a square with ~45 mm sides, which matches
+   the 32 mm circle in `coqui_sim/config.py`.
+2. **Which channel is which mic:** run `tap_test.py`. Number the holes 1-4 going round the
+   square, then tap next to each one when asked. It keeps each channel's loudest moment, shows
+   which channel heard each hole best, and checks they go round the board in order.
+   (Channel 1 also jumps when you tap: it's the board's processed mix of all 4 mics. Ignore it.)
