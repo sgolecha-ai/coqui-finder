@@ -11,7 +11,7 @@ be deleted.
 |---|---|---|
 | Raw microphones | channels 2-5 | channels 3-6 |
 | Other channels | 1 = processed, 6 = playback | 1-2 = processed |
-| Mic positions | circle of radius 32 mm (ASSUMED, measure it!) | 66 mm square (DOCUMENTED) |
+| Mic positions | 45 mm square, 32 mm from the centre (MEASURED) | 66 mm square (DOCUMENTED) |
 | Setup | none: works out of the box | flash firmware + `configure_xvf.sh` |
 
 **Don't run `setup/flash_firmware.sh` or `setup/configure_xvf.sh` with this board.** They are
