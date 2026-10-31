@@ -10,13 +10,18 @@ if ! command -v brew >/dev/null; then
     echo "Homebrew is needed. Install it from https://brew.sh (one command), then run this script again."
     exit 1
 fi
-brew install dfu-util libusb git
+# git comes with Apple's Command Line Tools (xcode-select --install), so brew doesn't need to add it
+brew install dfu-util libusb
 
 echo "== 2/4 Python environment (.venv) =="
-command -v python3 >/dev/null || { echo "python3 not found: run  brew install python  and try again."; exit 1; }
-python3 -m venv .venv
+# Use Apple's built-in Python 3.9: it runs natively on Apple Silicon (no Rosetta) and is the
+# same Python version as the Raspberry Pi. numpy<2 keeps us closer to the Pi's numpy 1.19.
+PY=/usr/bin/python3
+"$PY" -c "import sys; assert sys.version_info[:2] == (3, 9)" 2>/dev/null || {
+    echo "Apple's Python 3.9 not found: run  xcode-select --install  and try again."; exit 1; }
+"$PY" -m venv .venv
 .venv/bin/pip install --upgrade pip >/dev/null
-.venv/bin/pip install numpy scipy matplotlib sounddevice pyusb libusb-package
+.venv/bin/pip install "numpy<2" scipy matplotlib sounddevice pyusb libusb-package
 
 echo "== 3/4 Seeed reSpeaker XVF3800 tools and firmware (vendor/respeaker) =="
 if [ ! -d vendor/respeaker ]; then

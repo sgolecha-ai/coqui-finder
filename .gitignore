@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Seeed reSpeaker XVF3800 tools and firmware, downloaded by setup/mac_install.sh
+vendor/
