@@ -1,0 +1,2 @@
+# reSpeaker XVF3800 (USB VID 2886, PID 001A): allow non-root access for xvf_host.py control commands.
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2886", ATTRS{idProduct}=="001a", MODE="0666", GROUP="plugdev"

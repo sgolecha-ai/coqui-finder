@@ -1,0 +1,40 @@
+{
+  "file": "07_no_frogs_typical.wav",
+  "note": "Background only: should report 0 frogs",
+  "duration_s": 10,
+  "sample_rate_hz": 16000,
+  "format": "WAV, 6 channels, int16 (S16_LE)",
+  "channels": {
+    "1": "processed output (silent in simulation)",
+    "2": "processed output (silent in simulation)",
+    "3": "raw mic 0",
+    "4": "raw mic 1",
+    "5": "raw mic 2",
+    "6": "raw mic 3"
+  },
+  "mic_positions_m": [
+    [
+      0.033,
+      -0.033,
+      0.0
+    ],
+    [
+      0.033,
+      0.033,
+      0.0
+    ],
+    [
+      -0.033,
+      0.033,
+      0.0
+    ],
+    [
+      -0.033,
+      -0.033,
+      0.0
+    ]
+  ],
+  "azimuth_convention": "degrees counter-clockwise from the +x axis of the mic coordinates",
+  "background": "typical (50.0 dB SPL)",
+  "frogs": []
+}

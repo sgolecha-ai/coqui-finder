@@ -1,0 +1,71 @@
+{
+  "file": "04_two_frogs_30deg.wav",
+  "note": "Two frogs 30 deg apart",
+  "duration_s": 20,
+  "sample_rate_hz": 16000,
+  "format": "WAV, 6 channels, int16 (S16_LE)",
+  "channels": {
+    "1": "processed output (silent in simulation)",
+    "2": "processed output (silent in simulation)",
+    "3": "raw mic 0",
+    "4": "raw mic 1",
+    "5": "raw mic 2",
+    "6": "raw mic 3"
+  },
+  "mic_positions_m": [
+    [
+      0.033,
+      -0.033,
+      0.0
+    ],
+    [
+      0.033,
+      0.033,
+      0.0
+    ],
+    [
+      -0.033,
+      0.033,
+      0.0
+    ],
+    [
+      -0.033,
+      -0.033,
+      0.0
+    ]
+  ],
+  "azimuth_convention": "degrees counter-clockwise from the +x axis of the mic coordinates",
+  "background": "typical (50.0 dB SPL)",
+  "frogs": [
+    {
+      "azimuth_deg": 40.0,
+      "distance_m": 8.0,
+      "height_m": 1.0,
+      "level_at_1m_db_spl": 68.4,
+      "call_times_s": [
+        0.423,
+        3.388,
+        6.352,
+        9.317,
+        12.281,
+        15.245,
+        18.21
+      ]
+    },
+    {
+      "azimuth_deg": 70.0,
+      "distance_m": 9.0,
+      "height_m": 2.0,
+      "level_at_1m_db_spl": 65.5,
+      "call_times_s": [
+        0.637,
+        3.34,
+        6.043,
+        8.745,
+        11.448,
+        14.151,
+        16.854
+      ]
+    }
+  ]
+}
