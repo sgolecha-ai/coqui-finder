@@ -1,0 +1,54 @@
+{
+  "file": "01_one_frog_10m_quiet.wav",
+  "note": "One frog, quiet night",
+  "duration_s": 10,
+  "sample_rate_hz": 16000,
+  "format": "WAV, 6 channels, int16 (S16_LE)",
+  "channels": {
+    "1": "processed output (silent in simulation)",
+    "2": "raw mic 0",
+    "3": "raw mic 1",
+    "4": "raw mic 2",
+    "5": "raw mic 3",
+    "6": "playback (silent in simulation)"
+  },
+  "mic_positions_m": [
+    [
+      -0.032,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -0.032,
+      0.0
+    ],
+    [
+      0.032,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.032,
+      0.0
+    ]
+  ],
+  "azimuth_convention": "degrees counter-clockwise from the +x axis of the mic coordinates",
+  "background": "quiet (40.0 dB SPL)",
+  "frogs": [
+    {
+      "azimuth_deg": 60.0,
+      "distance_m": 10.0,
+      "height_m": 2.0,
+      "level_at_1m_db_spl": 71.4,
+      "call_times_s": [
+        1.638,
+        3.355,
+        5.071,
+        6.787,
+        8.503
+      ]
+    }
+  ]
+}
