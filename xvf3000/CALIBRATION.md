@@ -118,6 +118,29 @@ using one setting, `FULL_SCALE_SPL` in `xvf3000/coqui_sim/config.py`, which is j
 (120 dB) until you measure it. If the guess is 6 dB wrong, every distance is 2 times wrong; if
 it's 12 dB wrong, 4 times wrong.
 
+### "We set the phones to 61 dB at 1 m. Isn't that enough?"
+
+No. Setting the phones fixes the **sound going out**; the loudness test fixes the **board's
+hearing**. Distance needs both ends right:
+
+- **Phone volume (the frog end):** each pretend frog is a known 61 dB at 1 m.
+- **Loudness test (the board end):** when that call reaches the board, the board doesn't say
+  "58 dB", it says something like "340 counts". To work out the distance, the code has to know
+  how many dB 340 counts is, and that depends on how sensitive the board's mics are. Without the
+  loudness test, the code only guesses.
+
+It's like having a lamp you know is exactly this bright, and a light meter with no numbers on
+its dial. Knowing the lamp doesn't tell you what the needle means: you first show the meter a
+known brightness and mark the dial. The loudness test marks the board's dial.
+
+**Shortcut:** a phone already set to 61 dB at 1 m *is* a known sound, so it can do the loudness
+test too. Put it 1 m from the board, play `frogs/set_volume.wav`, run `loudness_cal.py`, and type
+**61** when it asks for the meter reading. The hiss file below is a little more accurate (a
+steady hiss changes less with echoes in the room), but the shortcut is fine for this project.
+
+**Check it worked:** one phone (61 dB at 1 m) placed 1 m from the board should come out at about
+**3 m** in `listen.py` (see [FROG_TEST.md](FROG_TEST.md)).
+
 ### What it does
 
 1. **Room check (5 s):** records the room with the sound off, to make sure the calibration sound

@@ -65,6 +65,11 @@ It records 30 seconds, then prints something like:
 
 Ignore the line "Distance and level are rough until the board is calibrated": you've done that.
 
+**Quick check first:** one phone 1 m from the board should come out at about **3 m**. If it's
+far off, the phone's volume or the board's loudness test is off. Setting the phones to 61 dB
+isn't enough on its own: the board also needs its loudness test, so it knows how many dB its
+numbers mean (see "Isn't that enough?" in [CALIBRATION.md](CALIBRATION.md)).
+
 Every run is saved in `xvf3000/recordings/` (a `.wav` and a `.json` with the answers). Use
 `--loop` to keep listening with a new report every 30 s.
 
